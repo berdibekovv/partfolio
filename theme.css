@@ -1,0 +1,173 @@
+/* =========================================
+   LIGHT (KUN) REJIMI
+   ========================================= */
+:root[data-theme="light"] {
+  --color-bg: #f6f7fb;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef0f8;
+  --color-border: #dfe3f0;
+  --color-text: #1b1f33;
+  --color-text-muted: #5b6384;
+  --color-success: #059669;
+}
+
+:root[data-theme="light"] .navbar.scrolled {
+  background: rgba(246, 247, 251, 0.88);
+  box-shadow: 0 4px 20px rgba(30, 40, 90, 0.08);
+}
+:root[data-theme="light"] .hero__code-card,
+:root[data-theme="light"] .skill-card:hover,
+:root[data-theme="light"] .scroll-top {
+  box-shadow: 0 16px 40px rgba(30, 40, 90, 0.12);
+}
+:root[data-theme="light"] .c-prop { color: var(--color-text); }
+:root[data-theme="light"] .c-string { color: #059669; }
+
+/* Tema almashganda yumshoq o'tish */
+body, .navbar, .about__card, .skill-card, .service-card, .project-card,
+.contact__form, .social-link, .skills, .footer {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* =========================================
+   NAVBAR: TIL VA TEMA TUGMALARI
+   ========================================= */
+.navbar__controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-switch {
+  display: flex;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.lang-btn:hover { color: var(--color-text); }
+
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  color: #fff;
+}
+
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg) scale(1.08);
+  border-color: var(--color-accent-2);
+}
+
+/* Desktopda menyu va tugmalar orasida joy */
+.navbar__menu { margin-left: auto; margin-right: 24px; }
+.navbar__menu.open { margin: 0; }
+
+/* =========================================
+   SERVICES (XIZMATLAR)
+   ========================================= */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: 0 16px 30px rgba(99, 102, 241, 0.15);
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-card__icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  background: var(--color-accent-soft);
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+/* Skills va Projects orasidagi ketma-ketlik uchun */
+.projects { background: var(--color-surface); }
+.project-card { background: var(--color-bg); }
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .services__grid { grid-template-columns: 1fr; }
+  .navbar__controls { margin-left: auto; margin-right: 14px; }
+  .navbar__menu { margin: 0; }
+  .navbar__burger { position: relative; z-index: 1001; }
+}
+
+@media (max-width: 380px) {
+  .lang-btn { padding: 5px 7px; }
+  .navbar__logo { font-size: 1rem; }
+}

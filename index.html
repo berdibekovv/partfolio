@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shohruh | Frontend Developer</title>
+
+  <!-- Tema miltillamasligi uchun sahifa chizilishidan oldin o'rnatiladi -->
+  <script>
+    try { document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark"); } catch (e) {}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Yangi: light tema, til tugmalari, xizmatlar -->
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#home" class="navbar__logo">&lt;Shohruh/&gt;</a>
+
+      <nav class="navbar__menu" id="navbarMenu">
+        <a href="#home" class="navbar__link active" data-i18n="nav_home">Home</a>
+        <a href="#about" class="navbar__link" data-i18n="nav_about">About Me</a>
+        <a href="#skills" class="navbar__link" data-i18n="nav_skills">Skills</a>
+        <a href="#services" class="navbar__link" data-i18n="nav_services">Services</a>
+        <a href="#projects" class="navbar__link" data-i18n="nav_projects">Projects</a>
+        <a href="#contact" class="navbar__link" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="navbar__controls">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn" data-lang="uz">UZ</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Theme">🌙</button>
+      </div>
+
+      <button class="navbar__burger" id="navbarBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HOME ===== -->
+  <section class="hero" id="home">
+    <div class="hero__bg-glow"></div>
+    <div class="container hero__inner">
+
+      <div class="hero__text">
+        <p class="hero__eyebrow" data-i18n="hero_eyebrow">// salom, dunyo</p>
+        <h1 class="hero__title"><span data-i18n="hero_title">Salom, men Shohruh</span> <span class="wave">👋</span></h1>
+        <h2 class="hero__subtitle">Frontend Developer</h2>
+        <p class="hero__desc" data-i18n="hero_desc">
+          Men zamonaviy va responsive web saytlar yaratishni o‘rganayotgan Frontend Developer-man.
+        </p>
+
+        <div class="hero__buttons">
+          <a href="#projects" class="btn btn--primary" data-i18n="btn_projects">View Projects</a>
+          <a href="#contact" class="btn btn--outline" data-i18n="btn_contact">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero__code-card">
+        <div class="code-card__top">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+          <span class="code-card__filename">shohruh.js</span>
+        </div>
+        <pre class="code-card__body"><code><span class="c-keyword">const</span> <span class="c-var">developer</span> = {
+  <span class="c-prop">name</span>: <span class="c-string">"Shohruh"</span>,
+  <span class="c-prop">role</span>: <span class="c-string">"Frontend Developer"</span>,
+  <span class="c-prop">stack</span>: [<span class="c-string">"HTML"</span>, <span class="c-string">"CSS"</span>, <span class="c-string">"JS"</span>],
+  <span class="c-prop">learning</span>: <span class="c-bool">true</span>
+};</code></pre>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ME ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <p class="section__eyebrow" data-i18n="about_eyebrow">01 — Tanishuv</p>
+      <h2 class="section__title" data-i18n="about_title">About Me</h2>
+
+      <div class="about__content">
+        <div class="about__card">
+          <span class="about__icon">🎓</span>
+          <p data-i18n="about1">Men frontend development sohasini qunt bilan o‘rganayotgan yosh dasturchiman.</p>
+        </div>
+        <div class="about__card">
+          <span class="about__icon">💻</span>
+          <p data-i18n="about2">HTML, CSS va JavaScript yordamida veb-saytlar qurish bilan shug‘ullanaman.</p>
+        </div>
+        <div class="about__card">
+          <span class="about__icon">🚀</span>
+          <p data-i18n="about3">Yangi loyihalar yaratish va ularni sinab ko‘rishni juda yoqtiraman.</p>
+        </div>
+        <div class="about__card">
+          <span class="about__icon">🎯</span>
+          <p data-i18n="about4">Kelajakda kuchli va professional Frontend Developer bo‘lish — mening maqsadim.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <p class="section__eyebrow" data-i18n="skills_eyebrow">02 — Ko'nikmalar</p>
+      <h2 class="section__title" data-i18n="skills_title">Skills</h2>
+
+      <div class="skills__grid">
+        <div class="skill-card">
+          <div class="skill-card__icon">🟧</div>
+          <h3>HTML</h3>
+          <p data-i18n="skd_html">Web sahifalarning tuzilishini yaratish</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🟦</div>
+          <h3>CSS</h3>
+          <p data-i18n="skd_css">Sahifalarni chiroyli va responsive qilish</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🟨</div>
+          <h3>JavaScript</h3>
+          <p data-i18n="skd_js">Saytga interaktivlik va dinamika qo‘shish</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🟥</div>
+          <h3>Git</h3>
+          <p data-i18n="skd_git">Loyihalarni versiyalash va boshqarish</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">⬛</div>
+          <h3>GitHub</h3>
+          <p data-i18n="skd_github">Kodlarni saqlash va ulashish</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🟩</div>
+          <h3>Responsive Design</h3>
+          <p data-i18n="skd_resp">Har qanday ekranga moslashuvchi dizayn</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">▲</div>
+          <h3>Vercel</h3>
+          <p data-i18n="skd_deploy">Saytni internetga joylash (deploy)</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🌐</div>
+          <h3>Netlify</h3>
+          <p data-i18n="skd_deploy">Saytni internetga joylash (deploy)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES (yangi) ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <p class="section__eyebrow" data-i18n="services_eyebrow">03 — Xizmatlar</p>
+      <h2 class="section__title" data-i18n="services_title">Services</h2>
+
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">🖥️</div>
+          <h3 data-i18n="sv1_t">Landing page</h3>
+          <p data-i18n="sv1_d">Biznes yoki mahsulot uchun bir sahifali, tez va chiroyli sayt.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">📱</div>
+          <h3 data-i18n="sv2_t">Responsive veb-sayt</h3>
+          <p data-i18n="sv2_d">Telefon, planshet va kompyuterda bir xil yaxshi ko‘rinadigan saytlar.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">👤</div>
+          <h3 data-i18n="sv3_t">Portfolio sayt</h3>
+          <p data-i18n="sv3_d">O‘zingizni va ishlaringizni namoyish qiladigan shaxsiy sayt.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">🎨</div>
+          <h3 data-i18n="sv4_t">Dizayndan kodga</h3>
+          <p data-i18n="sv4_d">Figma yoki rasm maketini aniq HTML/CSS/JS kodga aylantirish.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">🛒</div>
+          <h3 data-i18n="sv5_t">Mini-do‘kon</h3>
+          <p data-i18n="sv5_d">Mahsulotlar ro‘yxati va savatchasi bor oddiy onlayn do‘kon sahifasi.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">🚀</div>
+          <h3 data-i18n="sv6_t">Deploy va tuzatish</h3>
+          <p data-i18n="sv6_d">Saytni Vercel/Netlify’ga joylash va mavjud saytdagi xatolarni tuzatish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS (linklar o'zgarmagan) ===== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <p class="section__eyebrow" data-i18n="projects_eyebrow">04 — Loyihalar</p>
+      <h2 class="section__title" data-i18n="projects_title">My Projects</h2>
+
+      <div class="projects__grid">
+
+        <div class="project-card">
+          <div class="project-card__image">
+            <img src="https://placehold.co/500x300/12172a/8b93b8?text=ToDo+List" alt="ToDo List">
+          </div>
+          <div class="project-card__body">
+            <h3>ToDo List</h3>
+            <p data-i18n="p1_d">Vazifalarni qo‘shish, belgilash va o‘chirish imkonini beruvchi sodda ilova.</p>
+            <div class="project-card__tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-card__links">
+              <a href="https://berdibekovv.github.io/todolist/" class="btn btn--small btn--primary">Live Demo</a>
+              <a href="https://github.com/berdibekovv/todolist" class="btn btn--small btn--outline">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__image">
+            <img src="https://placehold.co/500x300/12172a/8b93b8?text=Timer" alt="Timer">
+          </div>
+          <div class="project-card__body">
+            <h3>Timer</h3>
+            <p data-i18n="p2_d">Vaqtni sanaydigan va signal beradigan oddiy taymer ilovasi.</p>
+            <div class="project-card__tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-card__links">
+              <a href="https://www.timeanddate.com/timer/" class="btn btn--small btn--primary">Live Demo</a>
+              <a href="https://github.com/timeanddate/timer" class="btn btn--small btn--outline">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__image">
+            <img src="https://placehold.co/500x300/12172a/8b93b8?text=Carousel" alt="Carousel">
+          </div>
+          <div class="project-card__body">
+            <h3>Carousel</h3>
+            <p data-i18n="p3_d">Rasmlarni avtomatik va qo‘lda almashtirib turuvchi slayder.</p>
+            <div class="project-card__tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-card__links">
+              <a href="https://example.com/carousel" class="btn btn--small btn--primary">Live Demo</a>
+              <a href="https://github.com/example/carousel" class="btn btn--small btn--outline">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__image">
+            <img src="https://placehold.co/500x300/12172a/8b93b8?text=Notes" alt="Notes">
+          </div>
+          <div class="project-card__body">
+            <h3>Notes</h3>
+            <p data-i18n="p4_d">Qisqa eslatmalarni yozish va saqlash uchun ilova.</p>
+            <div class="project-card__tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-card__links">
+              <a href="https://notes-silk-iota.vercel.app/" class="btn btn--small btn--primary">Live Demo</a>
+              <a href="https://notes-silk-iota.vercel.app/" class="btn btn--small btn--outline">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__image">
+            <img src="https://placehold.co/500x300/12172a/8b93b8?text=Book+List" alt="Book List">
+          </div>
+          <div class="project-card__body">
+            <h3>Book List</h3>
+            <p data-i18n="p5_d">O‘qilgan va o‘qilishi kerak bo‘lgan kitoblar ro‘yxatini yurituvchi ilova.</p>
+            <div class="project-card__tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-card__links">
+              <a href="https://www.ala.org/aboutala/offices/publishing/booklist" class="btn btn--small btn--primary">Live Demo</a>
+              <a href="https://github.com/ala/booklist" class="btn btn--small btn--outline">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__image">
+            <img src="https://placehold.co/500x300/12172a/8b93b8?text=Online+Shop" alt="Online Shop">
+          </div>
+          <div class="project-card__body">
+            <h3>Online Shop</h3>
+            <p data-i18n="p6_d">Mahsulotlarni ko‘rish va savatchaga qo‘shish imkonini beruvchi mini-do‘kon.</p>
+            <div class="project-card__tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-card__links">
+              <a href="https://asil-matolar.vercel.app/" class="btn btn--small btn--primary">Live Demo</a>
+              <a href="https://github.com/shohruhberdibekov353-a11y/Asil-Matolar" class="btn btn--small btn--outline">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section__eyebrow" data-i18n="contact_eyebrow">05 — Aloqa</p>
+      <h2 class="section__title" data-i18n="contact_title">Let's Work Together</h2>
+
+      <div class="contact__content">
+
+        <form class="contact__form" id="contactForm">
+          <div class="form__group">
+            <label for="name" data-i18n="lbl_name">Name</label>
+            <input type="text" id="name" name="name" data-i18n-ph="ph_name" placeholder="Ismingiz" required>
+          </div>
+          <div class="form__group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+          </div>
+          <div class="form__group">
+            <label for="message" data-i18n="lbl_message">Message</label>
+            <textarea id="message" name="message" rows="5" data-i18n-ph="ph_message" placeholder="Xabaringiz..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full" data-i18n="btn_send">Send Message</button>
+          <p class="form__success" id="formSuccess" data-i18n="form_ok">✅ Xabaringiz yuborildi! Rahmat.</p>
+        </form>
+
+        <div class="contact__socials">
+          <h3 data-i18n="social_title">Meni shu yerlardan toping</h3>
+
+          <a href="https://t.me/uzrhp" target="_blank" class="social-link">
+            <span class="social-link__icon">✈️</span> Telegram
+          </a>
+          <a href="https://github.com/berdibekovv" target="_blank" class="social-link">
+            <span class="social-link__icon">🐙</span> GitHub
+          </a>
+          <a href="https://linkedin.com/in/berdibekovv" target="_blank" class="social-link">
+            <span class="social-link__icon">💼</span> LinkedIn
+          </a>
+          <a href="https://instagram.com/uzvwox" target="_blank" class="social-link">
+            <span class="social-link__icon">📷</span> Instagram
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Shohruh</p>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top" aria-label="Top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
